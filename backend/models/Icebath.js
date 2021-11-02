@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const IcebathSchema = mongoose.Schema(
   {
+    name: { type: String, required: true },
     // before icebath
     onAnEmptyStomach: { type: Boolean, required: true },
     hoursOfSleep: { type: Number, required: true },
@@ -22,7 +23,6 @@ const IcebathSchema = mongoose.Schema(
     hotDrink: { type: Boolean, required: true },
     stressDuringRecovery: { type: String, required: true },
     afterBathCommentary: { type: String },
-    userID: { type: String, required: true },
   },
   { timestamps: true }
 );
