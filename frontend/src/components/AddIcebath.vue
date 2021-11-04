@@ -208,7 +208,7 @@
       </div>
 
         <div v-else>
-            <h4>Les données ont bien été enregistré!</h4>
+            <h4>Ta baignade a bien été enregistré!</h4>
             <button class="btn btn-success" @click="newIcebath">Ajouter une baignade</button>
         </div>
     </div>
@@ -326,15 +326,15 @@ export default {
         .catch((e) => {
           console.log(e);
         });
+      this.errors = [];
     },
-  },
-  newIcebath() {
-    this.submitted = false;
-    this.icebath = {};
-    this.errors = [];
+    newIcebath() {
+      this.submitted = false;
+      this.icebath = {};
+      console.log("icebath:", this.icebath, this.errors, this.submitted);
+    },
   },
 };
 </script>
-
 <style>
 </style>
