@@ -4,10 +4,9 @@
 
             <!------------Global informations------------>
             <fieldset>
-                <legend>Informations générales</legend>
+                <legend>Participant</legend>
                 <!-------name------->
-                <div class="mb-3">
-                    <span class="mr-3">Prenom</span>
+                <div class="my-2">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label mr-2" for="firstName">Evan</label>
                         <input
@@ -32,100 +31,12 @@
                     </div>
                 </div>
             </fieldset>
-            <hr>
+            
              <!------------Before iceBath------------>
           <fieldset>
             <legend>Avant la baignade</legend>
-            <!-------Empty stomack------->
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="onEmptyStomack"
-                name="onEmptyStomack"
-                v-model="icebath.onEmptyStomack"
-              />
-              <label class="form-check-label" for="onEmptyStomack"
-                >A Jeun</label
-              >
-            </div>
-            <!-------Hours of sleep------->
-            <div class="mb-3">
-                <span>Heures de sommeil:</span>
-                <br>
-                <div class="form-check form-check-inline">
-                    <input
-                    class="form-check-input"
-                    type="radio"
-                    id="hoursOfSleep"
-                    name="hoursOfSleep"
-                    value="moins de 5"
-                    v-model="icebath.hoursOfSleep"
-                    />
-                    <label class="form-check-label" for="hoursOfSleep"
-                    >Moins de 5h</label
-                    >
-                </div>
-                <div class="form-check form-check-inline">
-                    <input
-                    class="form-check-input"
-                    type="radio"
-                    id="hoursOfSleep"
-                    name="hoursOfSleep"
-                    value="5"
-                    v-model="icebath.hoursOfSleep"
-                    />
-                    <label class="form-check-label" for="hoursOfSleep">5h</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input
-                    class="form-check-input"
-                    type="radio"
-                    id="hoursOfSleep"
-                    name="hoursOfSleep"
-                    value="6"
-                    v-model="icebath.hoursOfSleep"
-                    />
-                    <label class="form-check-label" for="hoursOfSleep">6h</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input
-                    class="form-check-input"
-                    type="radio"
-                    id="hoursOfSleep"
-                    name="hoursOfSleep"
-                    value="7"
-                    v-model="icebath.hoursOfSleep"
-                    />
-                    <label class="form-check-label" for="hoursOfSleep">7h</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input
-                    class="form-check-input"
-                    type="radio"
-                    id="hoursOfSleep"
-                    name="hoursOfSleep"
-                    value="8"
-                    v-model="icebath.hoursOfSleep"
-                    />
-                    <label class="form-check-label" for="hoursOfSleep">8h</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input
-                    class="form-check-input"
-                    type="radio"
-                    id="hoursOfSleep"
-                    name="hoursOfSleep"
-                    value="plus de 8"
-                    v-model="icebath.hoursOfSleep"
-                    />
-                    <label class="form-check-label" for="hoursOfSleep"
-                    >Plus de 8h</label
-                    >
-                </div>
-            </div>
-            <!-------Hours of sleep------->
-            <div class="form-check mb-3">
+            <!-------Physical Activity Before------->
+            <div class="form-check my-3">
               <input
                 class="form-check-input"
                 type="checkbox"
@@ -137,25 +48,13 @@
                 >Tu as pratiqué une activité physique juste avant la baignade</label
               >
             </div>
-            <!-------Before Bath Commentary------->
-            <div class="form-floating mb-3">
-              <textarea
-                class="form-control"
-                id="beforeBathCommentary"
-                name="beforeBathCommentary"
-                rows="3"
-                cols="22"
-                v-model="icebath.beforeBathCommentary"
-              ></textarea>
-              <label for="beforeBathCommentary">Commentaires</label>
-            </div>
           </fieldset>
 
           <hr>
 
           <!------------During iceBath------------>
           <fieldset>
-            <legend>Pendant la baignade</legend>
+            <legend>Baignade</legend>
             <!--waterTemperature-->
             <div class="mb-3">
               <label for="waterTemperature">Temperature de l'eau</label>
@@ -163,48 +62,29 @@
                 <input
                   type="text"
                   id="waterTemperature"
+                  class="form-control-sm"
                   name="waterTemperature"
                   v-model="icebath.waterTemperature"
+                  placeholder="℃"
                 />
-                <span class="input-group-text">°</span>
               </div>
             </div>
             <!-------timeInWater------->
             <div class="mb-3">
-              <label for="timeInWater">Temps resté dans l'eau</label>
+              <label for="timeInWater">Temps resté dans l'eau Min</label>
               <div class="input-group mb-3">
-                <input type="text" id="timeInWater" name="timeInWater" v-model="icebath.timeInWater" />
-                <span class="input-group-text">Min</span>
+                <input 
+                  type="text" 
+                  id="timeInWater"
+                  class="form-control-sm" 
+                  name="timeInWater" 
+                  v-model="icebath.timeInWater"
+                  placeholder="Minutes"
+                   />
               </div>
             </div>
-            <!-------globalFeeling------->
-            <div class="form-floating mb-3">
-              <select class="form-select" name="feelings" id="globalFeeling" v-model="icebath.globalFeeling">
-                <option disabled selected>Choisis une option</option>
-                <option value="très dur">Très dur</option>
-                <option value="dur">Dur</option>
-                <option value="modéré">Modéré</option>
-                <option value="facile">Facile</option>
-                <option value="très facile">Très facile</option>
-              </select>
-              <label for="globalFeeling">Ressenti</label>
-            </div>
-            <!-------duringBathCommentary------->
-            <div class="form-floating mb-3">
-              <label for="duringBathCommentary">Commentaires</label>
-              <textarea
-                class="form-control"
-                id="duringBathCommentary"
-                name="duringBathCommentary"
-                rows="3"
-                cols="22"
-                v-model="icebath.duringBathCommentary"
-              ></textarea>
-            </div>
           </fieldset>
-
           <hr>
-
           <!------------weather------------>
           <fieldset>
             <legend>Météo</legend>
@@ -215,14 +95,17 @@
                 <input
                   type="text"
                   id="temperatureOutside"
+                  class="form-control-sm"
                   name="temperatureOutside"
                   v-model="icebath.temperatureOutside"
-                /><span class="input-group-text">°</span>
+                  placeholder="℃"
+                />
               </div>
             </div>
             <!-------weather------->
-            <div class="form-floating mb-3">
-              <select class="form-select" name="weather" id="weather" v-model="icebath.weather">
+            <div class="mb-3">
+              <label for="weather">Météo</label>
+              <select class="custom-select" name="weather" id="weather" v-model="icebath.weather">
                 <option disabled selected>Choisir une option</option>
                 <option value="partiellement nuageux">
                   Partiellement nuageux
@@ -233,7 +116,6 @@
                 <option value="neige">Neige</option>
                 <option value="tempête">Tempête</option>
               </select>
-              <label for="weather">Météo</label>
             </div>
             <!-------wind------->
             <div class="mb-3">
@@ -272,18 +154,6 @@
                 <label class="form-check-label" for="wind">Beaucoup</label>
               </div>
             </div>
-            <!-------weatherCommentary------->
-            <div class="form-floating mb-3">
-              <textarea
-                class="form-control"
-                id="weatherCommentary"
-                name="weatherCommentary"
-                rows="3"
-                cols="22"
-                v-model="icebath.weatherCommentary"
-              ></textarea>
-              <label for="weatherCommentary">Commentaires</label>
-            </div>
           </fieldset>
 
           <hr>
@@ -295,28 +165,23 @@
             <div class="mb-3">
               <label for="recoveryTime">Temps de récupération</label>
               <div class="input-group mb-3">
-                <input type="text" id="recoveryTime" name="recoveryTime" v-model="icebath.recoveryTime" />
-                <span class="input-group-text">Min</span>
+                <input 
+                  type="text" 
+                  id="recoveryTime" 
+                  class="form-control-sm" 
+                  name="recoveryTime" 
+                  v-model="icebath.recoveryTime"
+                  placeholder="Minutes"
+                   />
               </div>
             </div>
-            <!-------Hot drink------->
-            <div class="form-check mb-3">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="hotDrink"
-                name="hotDrink"
-                value="true"
-                v-model="icebath.hotDrink"
-              />
-              <label class="form-check-label" for="hotDrink"
-                >Boisson chaude</label
-              >
-            </div>
             <!-------stressDuringRecovery------->
-            <div class="form-floating mb-3">
+            <div class=" mb-3">
+              <label for="stressDuringRecovery"
+                >Stress pendant la récupération</label
+              >
               <select
-                class="form-select"
+                class="custom-select"
                 name="feelings"
                 id="stressDuringRecovery"
                 v-model="icebath.stressDuringRecovery"
@@ -327,21 +192,30 @@
                 <option value="peu">Peu</option>
                 <option value="aucun">Aucun</option>
               </select>
-              <label for="stressDuringRecovery"
-                >Stress pendant la récupération</label
-              >
             </div>
-            <!-------afterBathCommentary------->
+            <!-------globalFeeling------->
+            <div class="mb-3">
+              <label for="globalFeeling">Ressenti global de la baignade</label>
+              <select class="custom-select" name="feelings" id="globalFeeling" v-model="icebath.globalFeeling">
+                <option disabled selected>Choisis une option</option>
+                <option value="très dur">Très dur</option>
+                <option value="dur">Dur</option>
+                <option value="modéré">Modéré</option>
+                <option value="facile">Facile</option>
+                <option value="très facile">Très facile</option>
+              </select>
+            </div>
+            <!-------Commentary------->
             <div class="form-floating mb-3">
               <textarea
                 class="form-control"
-                id="afterBathCommentary"
-                name="afterBathCommentary"
+                id="commentary"
+                name="commentary"
                 rows="3"
                 cols="22"
-                v-model="icebath.afterBathCommentary"
+                v-model="icebath.commentary"
               ></textarea>
-              <label for="afterBathCommentary">Commentaires</label>
+              <label for="commentary">Commentaires</label>
             </div>
           </fieldset>
 
@@ -363,22 +237,16 @@ export default {
         return {
             icebath: {
                 firstName: [],
-                onEmptyStomack:false,
-                hoursOfSleep: "",
                 physicalActivityBefore:false,
-                beforeBathCommentary: "",
                 waterTemperature:"",
                 timeInWater:"",
                 globalFeeling:"",
-                duringBathCommentary:"",
                 temperatureOutside:"",
                 weather:"",
                 wind:"",
-                weatherCommentary:"",
                 recoveryTime:"",
-                hotDrink:false,
                 stressDuringRecovery:"",
-                afterBathCommentary:"",
+                commentary:"",
             },
             submitted: false
         };
@@ -387,22 +255,16 @@ export default {
         saveIcebath() {
             var data = {
                 firstName: this.icebath.firstName,
-                onEmptyStomack: this.icebath.onEmptyStomack,
-                hoursOfSleep: this.icebath.hoursOfSleep,
                 physicalActivityBefore: this.icebath.physicalActivityBefore,
-                beforeBathCommentary: this.icebath.beforeBathCommentary,
                 waterTemperature: this.icebath.waterTemperature,
                 timeInWater: this.icebath.timeInWater,
-                globalFeeling: this.icebath.globalFeeling,
-                duringBathCommentary: this.icebath.duringBathCommentary,
+                globalFeeling: this.icebath.globalFeeling,  
                 temperatureOutside: this.icebath.temperatureOutside,
                 weather: this.icebath.weather,
                 wind: this.icebath.wind,
-                weatherCommentary: this.icebath.weatherCommentary,
                 recoveryTime: this.icebath.recoveryTime,
-                hotDrink: this.icebath.hotDrink,
                 stressDuringRecovery: this.icebath.stressDuringRecovery,
-                afterBathCommentary: this.icebath.afterBathCommentary,
+                commentary: this.icebath.commentary,
             }
             console.log(data)
         }
