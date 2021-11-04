@@ -207,15 +207,17 @@
         </p>
       </div>
 
-        <div v-else>
+        <div class="col-12 col-md-10 mx-auto text-center" v-else>
             <h4>Ta baignade a bien été enregistré!</h4>
-            <button class="btn btn-success" @click="newIcebath">Ajouter une baignade</button>
+            <button class="btn btn-primary my-3" @click="newIcebath">Ajouter une baignade</button>
+            <img :src='image' class="mt-4">
         </div>
     </div>
 </template>
 
 <script>
 import IcebathDataService from "../services/IcebathDataService";
+import image from "../assets/dataSaved.png"
 export default {
   name: "add-ice-bath",
   data() {
@@ -236,6 +238,8 @@ export default {
       },
       errors: [],
       submitted: false,
+      image: image
+
     };
   },
   methods: {
