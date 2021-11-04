@@ -1,10 +1,9 @@
 <template>
     <div class="row">
-        <div v-if="!submitted" class="col-12 col-md-8 mx-auto">
-
+        <div v-if="!submitted" class="col-12 col-md-5 mx-auto">
             <!------------Global informations------------>
             <fieldset>
-                <legend>Participant</legend>
+                <legend>Participants</legend>
                 <!-------name------->
                 <div class="my-2">
                     <div class="form-check form-check-inline">
@@ -214,28 +213,30 @@
                 rows="3"
                 cols="22"
                 v-model="icebath.commentary"
+                placeholder="Facultatif"
               ></textarea>
               <label for="commentary">Commentaires</label>
             </div>
           </fieldset>
 
-            <button @click="saveIcebath" class="btn btn-success">Submit</button>
+            <button @click="saveIcebath" class="btn btn-primary">Enregistrer</button>
         </div>
 
         <div v-else>
-            <h4>You submitted successfully!</h4>
-            <button class="btn btn-success" @click="newIcebath">Add</button>
+            <h4>Les données ont bien été enregistré!</h4>
+            <button class="btn btn-success" @click="newIcebath">Ajouter une baignade</button>
         </div>
     </div>
 </template>
 
 <script>
-// import IcebathDataService from "../services/IcebathDataService";
+import IcebathDataService from "../services/IcebathDataService";
 export default {
     name: "add-ice-bath",
     data() {
         return {
             icebath: {
+                id:null,
                 firstName: [],
                 physicalActivityBefore:false,
                 waterTemperature:"",
@@ -266,8 +267,25 @@ export default {
                 globalFeeling: this.icebath.globalFeeling,
                 commentary: this.icebath.commentary,
             }
-            console.log(data)
+            console.log(data);
+            IcebathDataService.create(data)
+             .then(response => {
+               this.icebath.id = response.data.id;
+               console.log("response", response.data);
+               this.submitted = true
+             })
+              .catch(e => {
+                console.log(e);
+              });
+        },
+        newIcebath() {
+          this.submitted = false;
+          this.icebath = {};
         }
     }
 }
 </script>
+
+<style>
+  
+</style>
