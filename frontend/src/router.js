@@ -1,11 +1,11 @@
 import { createWebHistory, createRouter } from "vue-router";
-
+import IcebathListView from "./views/IcebathListView.vue";
 const routes = [
   {
     path: "/",
-    alias: "/ice-baths",
-    name: "ice-baths",
-    component: () => import("./components/IcebathList"),
+    alias: "/ice-bath-list-view",
+    name: "ice-bath-list-view",
+    component: IcebathListView,
   },
   {
     path: "/ice-baths/:id",

@@ -1,7 +1,11 @@
 <template>
   <div class="row my-5">
     <div v-for="bath in icebaths" :key="bath" class="col-12 col-md-2 my-2 mx-1">
-      <ul class="card">
+      <router-link
+        style="text-decoration: none; color: inherit"
+        :to="`/ice-baths/${bath._id}`"
+        class="card"
+      >
         <li class="card-header">
           <h4>
             {{
@@ -27,7 +31,7 @@
         <li class="">
           {{ weather(bath.weather) }}
         </li>
-      </ul>
+      </router-link>
     </div>
   </div>
 </template>
@@ -50,6 +54,7 @@ export default {
         .then((response) => {
           this.icebaths = response.data;
           console.log(response.data);
+          console.log(this.icebaths);
         })
         .catch((e) => {
           console.log(e);
@@ -82,7 +87,7 @@ export default {
 </script>
 
 <style>
-ul {
+li {
   list-style: none;
   margin: 0;
   padding: 0;
