@@ -1,6 +1,10 @@
 <template>
   <div class="row my-5">
-    <div v-for="bath in icebaths" :key="bath" class="col-12 col-md-2 my-2 mx-1">
+    <div
+      v-for="bath in icebaths"
+      :key="bath._id"
+      class="col-12 col-md-2 my-2 mx-1"
+    >
       <router-link
         style="text-decoration: none; color: inherit"
         :to="`/ice-baths/${bath._id}`"
