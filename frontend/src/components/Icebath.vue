@@ -17,31 +17,31 @@
         </li>
         <li class="list-group-item text-left">
           ⌛ Temps de récupération:
-          <span class="badge badge-primary badge-pill">{{
-            currentIcebath.recoveryTime
-          }}</span>
+          <span class="badge badge-primary badge-pill"
+            >{{ currentIcebath.recoveryTime }} min</span
+          >
         </li>
         <li class="list-group-item text-left">
-          😅 Stress pendant la récupération:
+          😅 Afterdrop:
           {{ currentIcebath.stressDuringRecovery }}
         </li>
         <li class="list-group-item text-left">
           🌡 Temperature exterieur:
-          <span class="badge badge-primary badge-pill">{{
-            currentIcebath.temperatureOutside
-          }}</span>
+          <span class="badge badge-primary badge-pill"
+            >{{ currentIcebath.temperatureOutside }} ℃</span
+          >
         </li>
         <li class="list-group-item text-left">
           💧 Temps resté dans l'eau:
-          <span class="badge badge-primary badge-pill">{{
-            currentIcebath.timeInWater
-          }}</span>
+          <span class="badge badge-primary badge-pill"
+            >{{ currentIcebath.timeInWater }} min</span
+          >
         </li>
         <li class="list-group-item text-left">
           🌀 Temperature de l'eau:
-          <span class="badge badge-primary badge-pill">{{
-            currentIcebath.waterTemperature
-          }}</span>
+          <span class="badge badge-primary badge-pill"
+            >{{ currentIcebath.waterTemperature }} ℃</span
+          >
         </li>
         <li class="list-group-item text-left">
           🌦 Météo: {{ currentIcebath.weather }}
