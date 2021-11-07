@@ -1,9 +1,9 @@
 <template>
-  <div class="row my-5">
+  <div class="row my-3">
     <div
-      v-for="bath in icebaths"
+      v-for="bath in icebaths.slice(0, items)"
       :key="bath._id"
-      class="col-12 col-md-2 my-2 mx-1"
+      class="col-12 col-md-2 my-2"
     >
       <router-link
         style="text-decoration: none; color: inherit"
@@ -17,7 +17,7 @@
             }}
           </h4>
         </li>
-        <li>
+        <li class="mt-2">
           <span :class="{ cold: bath.waterTemperature <= 10 }">
             {{ bath.waterTemperature }} ℃
           </span>
@@ -26,16 +26,13 @@
         <li>
           {{ bath.createdAt.substring(0, 10).split("-").reverse().join("-") }}
         </li>
-        <li>
-          {{
-            bath.globalFeeling.charAt(0).toUpperCase() +
-            bath.globalFeeling.slice(1)
-          }}
-        </li>
-        <li class="">
+        <li class="mb-2 weatherIcon">
           {{ weather(bath.weather) }}
         </li>
       </router-link>
+    </div>
+    <div v-if="icebaths.length > 12" class="col-12 text-center mt-3">
+      <button @click="showMore" class="btn btn-primary">Afficher plus</button>
     </div>
   </div>
 </template>
@@ -50,6 +47,7 @@ export default {
       icebaths: [],
       totalPages: 1,
       currentPage: 1,
+      items: 12,
     };
   },
   methods: {
@@ -83,6 +81,9 @@ export default {
           return "meteo non indiqué*";
       }
     },
+    showMore() {
+      this.items += 12;
+    },
   },
   mounted() {
     this.retrieveIcebath();
@@ -106,5 +107,9 @@ li {
 
 .cold {
   color: rgb(43, 210, 251);
+  font-size: 1.1em;
+}
+.weatherIcon {
+  font-size: 2em;
 }
 </style>

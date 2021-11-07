@@ -1,23 +1,27 @@
 <template>
-  <div class="row">
-    <ul class="col-12 col-md-6 my-5 mx-auto">
-      <li>Participants: {{ currentIcebath.firstName }}</li>
-      <li>Date: {{ currentIcebath.createdAt }}</li>
-      <li>Ressenti global: {{ currentIcebath.globalFeeling }}</li>
-      <li>
-        Sport avant la baignade: {{ currentIcebath.physicalActivityBefore }}
-      </li>
-      <li>Temps de récupération: {{ currentIcebath.recoveryTime }}</li>
-      <li>
-        Stress pendant la récupération{{ currentIcebath.stressDuringRecovery }}
-      </li>
-      <li>Temperature exterieur: {{ currentIcebath.temperatureOutside }}</li>
-      <li>Temps resté dans l'eau: {{ currentIcebath.timeInWater }}</li>
-      <li>Temperature de l'eau: {{ currentIcebath.waterTemperature }}</li>
-      <li>Météo: {{ currentIcebath.weather }}</li>
-      <li>Vent: {{ currentIcebath.wind }}</li>
-      <li>Commentaires: {{ currentIcebath.commentary }}</li>
-    </ul>
+  <div class="container mt-3">
+    <div class="row">
+      <ul class="col-12 col-md-6 my-5 mx-auto">
+        <li>Participants: {{ currentIcebath.firstName }}</li>
+        <li>Date: {{ currentIcebath.createdAt }}</li>
+        <li>Ressenti global: {{ currentIcebath.globalFeeling }}</li>
+        <li>
+          Sport avant la baignade: {{ currentIcebath.physicalActivityBefore }}
+        </li>
+        <li>Temps de récupération: {{ currentIcebath.recoveryTime }}</li>
+        <li>
+          Stress pendant la récupération{{
+            currentIcebath.stressDuringRecovery
+          }}
+        </li>
+        <li>Temperature exterieur: {{ currentIcebath.temperatureOutside }}</li>
+        <li>Temps resté dans l'eau: {{ currentIcebath.timeInWater }}</li>
+        <li>Temperature de l'eau: {{ currentIcebath.waterTemperature }}</li>
+        <li>Météo: {{ currentIcebath.weather }}</li>
+        <li>Vent: {{ currentIcebath.wind }}</li>
+        <li>Commentaires: {{ currentIcebath.commentary }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
