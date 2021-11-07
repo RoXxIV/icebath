@@ -1,5 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import IcebathListView from "./views/IcebathListView.vue";
+import StatisticsView from "./views/StatisticsView.vue";
 const routes = [
   {
     path: "/",
@@ -16,6 +17,12 @@ const routes = [
     path: "/add",
     name: "add",
     component: () => import("./components/AddIcebath"),
+  },
+  {
+    path: "/",
+    alias: "/statistics-view",
+    name: "statistics-view",
+    component: StatisticsView,
   },
 ];
 

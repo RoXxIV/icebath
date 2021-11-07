@@ -1,5 +1,5 @@
 <template>
-  <div class="row mt-5">
+  <div class="row mt-4">
     <div class="col-12 col-md-8 mx-auto">
       <h1 class="text-center mb-3">
         Boost your <span class="typed-text">{{ typeValue }}</span>
