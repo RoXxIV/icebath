@@ -14,9 +14,9 @@
       </div>
     </nav>
 
-    <div class="container mt-3">
+    <main>
       <router-view />
-    </div>
+    </main>
   </div>
 </template>
 

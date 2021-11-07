@@ -1,5 +1,5 @@
 <template>
-  <div class="row my-5">
+<div class="container mt-3"><div class="row my-5">
     <div v-if="!submitted" class="col-12 col-md-6 mx-auto">
       <!------------Global informations------------>
       <fieldset>
@@ -212,7 +212,8 @@
             <button class="btn btn-primary my-3" @click="newIcebath">Ajouter une baignade</button>
             <img :src='image' class="mt-4">
         </div>
-    </div>
+    </div></div>
+  
 </template>
 
 <script>
