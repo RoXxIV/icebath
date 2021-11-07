@@ -4,7 +4,9 @@
       <router-link to="/" class="navbar-brand">Stay Cold</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/ice-baths" class="nav-link">Ice Baths</router-link>
+          <router-link to="/ice-bath-list-view" class="nav-link"
+            >Ice Baths</router-link
+          >
         </li>
         <li class="nav-item">
           <router-link to="/add" class="nav-link">Ajouter</router-link>
@@ -20,7 +22,6 @@
 
 <script>
 export default {
-  name: "app"
+  name: "app",
 };
 </script>
-
