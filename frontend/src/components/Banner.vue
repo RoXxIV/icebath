@@ -26,7 +26,7 @@ export default {
       ],
       typingSpeed: 100,
       erasingSpeed: 50,
-      newTextDelay: 2000,
+      newTextDelay: 1000,
       typeArrayIndex: 0,
       charIndex: 0,
     };
@@ -69,9 +69,11 @@ export default {
 };
 </script>
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Contrail+One&display=swap");
 h1 {
   font-size: 2em;
   color: black;
+  font-family: "Contrail One", cursive;
 }
 span.typed-text {
   color: black;
