@@ -3,7 +3,7 @@
     <div v-if="!submitted" class="col-12 col-md-6 mx-auto">
       <!------------Global informations------------>
       <fieldset>
-        <legend class="my-2">Participants</legend>
+        <legend>Participants</legend>
         <!-------name------->
         <div>
             <div class="form-check form-check-inline">
