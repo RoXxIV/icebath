@@ -1,5 +1,8 @@
 <template>
-  <div class="container mt-3"><IcebathList /></div>
+  <div class="container mt-3">
+    <h2 class="text-center">Dernieres baignades</h2>
+    <IcebathList />
+  </div>
 </template>
 
 <script>

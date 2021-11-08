@@ -1,14 +1,17 @@
 <template>
   <div class="row my-3">
     <div
-      v-for="bath in icebaths.slice(0, items)"
+      v-for="bath in icebaths.slice(0, items).reverse()"
       :key="bath._id"
-      class="col-12 col-md-2 my-2"
+      class="col-10 col-sm-6 col-md-3 my-2 mx-auto"
     >
       <router-link
         style="text-decoration: none; color: inherit"
         :to="`/ice-baths/${bath._id}`"
         class="card"
+        :class="{
+          warning: bath.globalFeeling == 'dur',
+        }"
       >
         <li class="card-header">
           <h4>
@@ -31,7 +34,7 @@
         </li>
       </router-link>
     </div>
-    <div v-if="icebaths.length > 12" class="col-12 text-center mt-3">
+    <div v-if="icebaths.length > 8" class="col-12 text-center mt-3">
       <button @click="showMore" class="btn btn-primary">Afficher plus</button>
     </div>
   </div>
@@ -47,7 +50,7 @@ export default {
       icebaths: [],
       totalPages: 1,
       currentPage: 1,
-      items: 12,
+      items: 8,
     };
   },
   methods: {
@@ -82,7 +85,7 @@ export default {
       }
     },
     showMore() {
-      this.items += 12;
+      this.items += 8;
     },
   },
   mounted() {
@@ -111,5 +114,8 @@ li {
 }
 .weatherIcon {
   font-size: 2em;
+}
+.warning {
+  border-color: rgb(255, 60, 60);
 }
 </style>
