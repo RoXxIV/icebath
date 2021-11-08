@@ -108,7 +108,7 @@ export default {
 
       for (let i = 0; i < this.icebaths.length; i++) {
         if (this.icebaths[i]["firstName"] == firstName) {
-          totalTemperature += this.icebaths[i]["timeInWater"];
+          totalTemperature += this.icebaths[i]["waterTemperature"];
           index++;
         }
       }

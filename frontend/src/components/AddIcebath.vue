@@ -126,6 +126,7 @@
               <option value="" disabled selected>Choisir une option</option>
               <option value="aucun">Aucun</option>
               <option value="leger">Leger</option>
+              <option value="modéré">Modéré</option>
               <option value="beaucoup">Beaucoup</option>
             </select>
             <div class="input-group-append">
@@ -160,6 +161,7 @@
               v-model="icebath.stressDuringRecovery"
             >
               <option value="" disabled selected>Choisir une option</option>
+              <option value="intense">Très intense</option>
               <option value="intense">Intense</option>
               <option value="modéré">Modéré</option>
               <option value="peu">Peu</option>
