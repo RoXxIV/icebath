@@ -1,15 +1,15 @@
 <template>
-  <div class="container mt-3"><IcebathList /></div>
+  <div class="container mt-3"><AddIcebath /></div>
 </template>
 
 <script>
 // @ is an alias to /src
-import IcebathList from "../components/IcebathList.vue";
+import AddIcebath from "../components/AddIcebath.vue";
 
 export default {
   name: "ice-bath-list-view",
   components: {
-    IcebathList,
+    AddIcebath,
   },
 };
 </script>

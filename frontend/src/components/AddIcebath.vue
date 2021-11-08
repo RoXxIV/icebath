@@ -1,9 +1,9 @@
 <template>
-<div class="container mt-3"><div class="row my-5">
+<div class="container mt-3"><div class="row mb-5">
     <div v-if="!submitted" class="col-12 col-md-6 mx-auto">
       <!------------Global informations------------>
       <fieldset>
-        <legend class="my-2">Participants</legend>
+        <legend>Participants</legend>
         <!-------name------->
         <div>
             <div class="form-check form-check-inline">
@@ -166,7 +166,7 @@
               <option value="aucun">Aucun</option>
             </select>
             <div class="input-group-append">
-            <label class="input-group-text" for="stressDuringRecovery">Stress pendant la récupération</label>
+            <label class="input-group-text" for="stressDuringRecovery">Afterdrop</label>
             </div>
           </div>
           <!-------globalFeeling------->
