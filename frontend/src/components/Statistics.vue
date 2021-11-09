@@ -4,38 +4,58 @@
       <ul class="list-group">
         <li class="list-group-item"><h4>Teddy</h4></li>
         <li class="list-group-item">
-          Temps totale dans l'eau : {{ totalTimeInWater("teddy") }}
+          Temps totale dans l'eau :
+          <span class="badge badge-primary badge-pill">{{
+            totalTimeInWater("teddy")
+          }}</span>
         </li>
         <li class="list-group-item">
-          Temps moyen dans l'eau : {{ AverageTimeInWater("teddy") }}
+          Temps moyen dans l'eau :
+          <span class="badge badge-primary badge-pill">{{
+            AverageTimeInWater("teddy")
+          }}</span>
         </li>
         <li class="list-group-item">
           Temperature de l'eau la plus basse :
-          {{ lowestTemperature("teddy") }}
+          <span class="badge badge-primary badge-pill">{{
+            lowestTemperature("teddy")
+          }}</span>
         </li>
         <li class="list-group-item">
-          Temperature moyenne : {{ AverageWaterTemperature("teddy") }}
+          Temperature moyenne :
+          <span class="badge badge-primary badge-pill">{{
+            AverageWaterTemperature("teddy")
+          }}</span>
         </li>
-        <li class="list-group-item">Ressenti globale :</li>
       </ul>
     </div>
-
     <div class="col-12 col-md-6">
       <ul class="list-group">
         <li class="list-group-item"><h4>Evan</h4></li>
         <li class="list-group-item">
-          Temps totale dans l'eau : {{ totalTimeInWater("evan") }}
+          Temps totale dans l'eau :
+          <span class="badge badge-primary badge-pill">{{
+            totalTimeInWater("evan")
+          }}</span>
         </li>
         <li class="list-group-item">
-          Temps moyen dans l'eau : {{ AverageTimeInWater("evan") }}
+          Temps moyen dans l'eau :
+          <span class="badge badge-primary badge-pill">{{
+            AverageTimeInWater("evan")
+          }}</span>
         </li>
         <li class="list-group-item">
-          Temperature de l'eau la plus basse : {{ lowestTemperature("evan") }}
+          Temperature de l'eau la plus basse :
+          <span class="badge badge-primary badge-pill">{{
+            lowestTemperature("evan")
+          }}</span>
         </li>
         <li class="list-group-item">
-          Temperature moyenne : {{ AverageWaterTemperature("evan") }}
+          Temperature moyenne :
+          <span class="badge badge-primary badge-pill">{{
+            AverageWaterTemperature("evan")
+          }}</span>
         </li>
-        <li class="list-group-item">Ressenti globale :</li>
       </ul>
     </div>
   </div>
@@ -65,6 +85,7 @@ export default {
     },
     totalTimeInWater(firstName) {
       let totalTime = 0;
+      // convert to 00 h 00 min
       const convert = (n) =>
         `0${(n / 60) ^ 0}`.slice(-2) +
         " h " +

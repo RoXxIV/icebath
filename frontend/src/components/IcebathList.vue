@@ -1,7 +1,7 @@
 <template>
   <div class="row my-3">
     <div
-      v-for="bath in icebaths.slice(0, items).reverse()"
+      v-for="bath in icebaths.slice(0, bathCard).reverse()"
       :key="bath._id"
       class="col-10 col-sm-6 col-md-3 my-2 mx-auto"
     >
@@ -30,12 +30,14 @@
           {{ bath.createdAt.substring(0, 10).split("-").reverse().join("-") }}
         </li>
         <li class="mb-2 weatherIcon">
-          {{ weather(bath.weather) }}
+          {{ displayWeatherAsEmoji(bath.weather) }}
         </li>
       </router-link>
     </div>
     <div v-if="icebaths.length > 8" class="col-12 text-center mt-3">
-      <button @click="showMore" class="btn btn-primary">Afficher plus</button>
+      <button @click="showMoreBathCards" class="btn btn-primary">
+        Afficher plus
+      </button>
     </div>
   </div>
 </template>
@@ -50,7 +52,7 @@ export default {
       icebaths: [],
       totalPages: 1,
       currentPage: 1,
-      items: 8,
+      bathCard: 8,
     };
   },
   methods: {
@@ -58,14 +60,14 @@ export default {
       IcebathDataService.getAll()
         .then((response) => {
           this.icebaths = response.data;
-          console.log(response.data);
-          console.log(this.icebaths);
+          // console.log(response.data);
+          // console.log(this.icebaths);
         })
         .catch((e) => {
           console.log(e);
         });
     },
-    weather(data) {
+    displayWeatherAsEmoji(data) {
       switch (data) {
         case "partiellement nuageux":
           return "⛅";
@@ -84,8 +86,8 @@ export default {
           return "meteo non indiqué*";
       }
     },
-    showMore() {
-      this.items += 8;
+    showMoreBathCards() {
+      this.bathCard += 8;
     },
   },
   mounted() {
@@ -113,9 +115,10 @@ li {
   font-size: 1.1em;
 }
 .weatherIcon {
-  font-size: 2em;
+  font-size: 2.3em;
 }
 .warning {
-  border-color: rgb(255, 60, 60);
+  -webkit-box-shadow: inset 1px 1px 10px 2px rgba(53, 198, 255, 0.2);
+  box-shadow: inset 1px 1px 10px 2px rgba(53, 198, 255, 0.2);
 }
 </style>

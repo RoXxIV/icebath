@@ -8,7 +8,7 @@
         </li>
         <li class="list-group-item text-left">
           📅 Date :
-          {{ createdAt.substring(0, 10).split("-").reverse().join("-") }}
+          {{ createdAt }}
         </li>
         <li class="list-group-item text-left">
           🏋️‍♂️ Sport avant la baignade :
@@ -85,7 +85,11 @@ export default {
       IcebathDataService.get(id)
         .then((response) => {
           console.log(response.data);
-          this.createdAt = response.data["createdAt"];
+          this.createdAt = response.data["createdAt"]
+            .substring(0, 10)
+            .split("-")
+            .reverse()
+            .join("-");
           this.firstName = response.data["firstName"];
           this.physicalActivityBefore = response.data["physicalActivityBefore"];
           this.recoveryTime = response.data["recoveryTime"];

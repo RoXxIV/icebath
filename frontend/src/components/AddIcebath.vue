@@ -1,10 +1,10 @@
 <template>
 <div class="container mt-3"><div class="row mb-5">
     <div v-if="!submitted" class="col-12 col-md-6 mx-auto">
-      <!------------Global informations------------>
+      <!------------Global Informations------------>
       <fieldset>
         <legend>Participants</legend>
-        <!-------name------->
+        <!-------First Name------->
         <div>
             <div class="form-check form-check-inline">
                 <label class="form-check-label mr-2" for="firstName">Evan</label>
@@ -33,7 +33,7 @@
         <!------------Before iceBath------------>
         <fieldset>
           <legend class="my-2">Avant la baignade</legend>
-          <!-------Physical Activity Before------->
+          <!-------Physical Activity - Before------->
           <div class="form-check">
             <input
               class="form-check-input"
@@ -50,7 +50,7 @@
         <!------------During iceBath------------>
         <fieldset>
           <legend class="my-2">Baignade</legend>
-          <!--waterTemperature-->
+          <!--Water Temperature-->
           <div class="input-group input-group-sm mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" for="waterTemperature">Temperature de l'eau</span>
@@ -65,7 +65,7 @@
               />
             
           </div>
-          <!-------timeInWater------->
+          <!-------Time In Water------->
           <div class="input-group input-group-sm">
             <div class="input-group-prepend">
               <span class="input-group-text" for="timeInWater">Temps resté dans l'eau</span>
@@ -83,10 +83,10 @@
 
           </div>
         </fieldset>
-        <!------------weather------------>
+        <!------------Weather------------>
         <fieldset>
           <legend class="my-2">Météo</legend>
-          <!-------temperatureOutside------->
+          <!-------Temperature Outside------->
           <div class="input-group input-group-sm mb-3">
             <div class="input-group-prepend">
             <span class="input-group-text" for="temperatureOutside">Temperature ambiante</span>
@@ -103,7 +103,7 @@
               />
             
           </div>
-          <!-------weather------->
+          <!-------Weather------->
           <div class="input-group mb-3">
             <select class="custom-select" name="weather" id="weather" v-model="icebath.weather">
               <option value="" disabled selected>Choisir une option</option>
@@ -120,7 +120,7 @@
             <label class="input-group-text" for="weather">Météo</label>
             </div>
           </div>
-          <!-------wind------->
+          <!-------Wind------->
           <div class="input-group">
             <select class="custom-select" name="wind" id="wind" v-model="icebath.wind">
               <option value="" disabled selected>Choisir une option</option>
@@ -134,10 +134,10 @@
             </div>
           </div>
         </fieldset>
-        <!------------recovery------------>
+        <!------------Recovery------------>
         <fieldset>
           <legend class="my-2">Récupération</legend>
-          <!-------recoveryTime------->
+          <!-------Recovery Time------->
           <div class="input-group input-group-sm mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" for="recoveryTime">Temps de récupération</span>
@@ -152,7 +152,7 @@
                 placeholder="Minutes"
                   />
           </div>
-          <!-------stressDuringRecovery------->
+          <!-------Stress During Recovery------->
           <div class="input-group mb-3">
             <select
               class="custom-select"
@@ -171,7 +171,7 @@
             <label class="input-group-text" for="stressDuringRecovery">Afterdrop</label>
             </div>
           </div>
-          <!-------globalFeeling------->
+          <!-------Global Feeling------->
           <div class="input-group mb-3">
             <select class="custom-select" name="feelings" id="globalFeeling" v-model="icebath.globalFeeling">
               <option value="" disabled selected>Choisis une option</option>
@@ -247,7 +247,7 @@ export default {
   },
   methods: {
     saveIcebath() {
-      // errors handling
+      // Errors handling
       this.errors = [];
       if (this.icebath.firstName.length == 0) {
         this.errors.push("veuillez indiquer un participant");
@@ -323,7 +323,7 @@ export default {
         globalFeeling: this.icebath.globalFeeling,
         commentary: this.icebath.commentary,
       };
-      console.log(data);
+      // console.log(data);
       IcebathDataService.create(data)
         .then((response) => {
           this.icebath.id = response.data.id;
@@ -338,7 +338,7 @@ export default {
     newIcebath() {
       this.submitted = false;
       this.icebath = {};
-      console.log("icebath:", this.icebath, this.errors, this.submitted);
+      // console.log("icebath:", this.icebath, this.errors, this.submitted);
     },
   },
 };
